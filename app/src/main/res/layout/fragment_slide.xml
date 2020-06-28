@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.slide.SlideFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.nikasov.madlibs.views.AppTextView
+        android:gravity="center"
+        android:text="Slide"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

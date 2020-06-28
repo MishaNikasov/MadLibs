@@ -6,9 +6,9 @@ import com.nikasov.madlibs.common.Constants
 
 @Entity(tableName = Constants.HISTORY_TABLE_NAME)
 data class HistoryModel (
-    val text : String,
-    val date : Long
+    var text : String,
+    var date : Long
 ) {
     @PrimaryKey(autoGenerate = true)
-    val id : Int? = null
+    var id : Int? = null
 }

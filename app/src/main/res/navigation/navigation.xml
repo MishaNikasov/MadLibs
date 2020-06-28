@@ -13,13 +13,31 @@
         <action
             android:id="@+id/action_homeFragment_to_slideFragment"
             app:destination="@id/slideFragment" />
-        <argument
-            android:name="type_of_game"
-            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/slideFragment"
         android:name="com.nikasov.madlibs.ui.fragment.slide.SlideFragment"
         android:label="fragment_slide"
-        tools:layout="@layout/fragment_slide" />
+        tools:layout="@layout/fragment_slide">
+        <argument
+            android:name="type_of_game"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_slideFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.nikasov.madlibs.ui.fragment.history.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.nikasov.madlibs.ui.fragment.result.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_resultFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+    </fragment>
 </navigation>

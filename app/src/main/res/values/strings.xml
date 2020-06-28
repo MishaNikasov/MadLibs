@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">MadLibs</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="single_player">Один игрок</string>
+    <string name="two_players">Два игрока</string>
+    <string name="home">Игра</string>
+    <string name="history">История</string>
 </resources>

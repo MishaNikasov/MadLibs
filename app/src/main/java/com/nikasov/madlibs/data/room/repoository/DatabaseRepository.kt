@@ -6,7 +6,7 @@ import com.nikasov.madlibs.data.room.model.history.HistoryModelDAO
 import javax.inject.Inject
 
 class DatabaseRepository @Inject constructor(
-    val historyDAO : HistoryModelDAO
+    private val historyDAO : HistoryModelDAO
 ) {
 
     suspend fun insertHistory(history : HistoryModel){
