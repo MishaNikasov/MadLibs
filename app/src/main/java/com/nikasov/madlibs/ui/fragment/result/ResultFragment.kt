@@ -1,4 +1,4 @@
-package com.nikasov.madlibs.ui.fragment.slide
+package com.nikasov.madlibs.ui.fragment.result
 
 import android.os.Bundle
 import android.view.View
@@ -8,9 +8,9 @@ import com.nikasov.madlibs.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SlideFragment : Fragment(R.layout.fragment_slide) {
+class ResultFragment : Fragment(R.layout.fragment_result) {
 
-    private val slideViewModel : SlideViewModel by viewModels()
+    private val resultViewModel : ResultViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

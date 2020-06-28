@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.nikasov.madlibs.ui.fragment.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_slideFragment"
+            app:destination="@id/slideFragment" />
+        <argument
+            android:name="type_of_game"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/slideFragment"
+        android:name="com.nikasov.madlibs.ui.fragment.slide.SlideFragment"
+        android:label="fragment_slide"
+        tools:layout="@layout/fragment_slide" />
+</navigation>
