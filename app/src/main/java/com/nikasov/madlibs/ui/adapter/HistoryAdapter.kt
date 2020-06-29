@@ -64,6 +64,7 @@ class HistoryAdapter(private val interaction: Interaction? = null) :
             itemView.setOnClickListener {
                 interaction?.onItemSelected(adapterPosition, item)
             }
+            //todo: add date to item
             itemView.date.text = item.date.toString()
             itemView.text.text = item.firstStoryText
         }

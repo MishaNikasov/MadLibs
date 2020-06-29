@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.addCallback
 import androidx.core.content.ContextCompat
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
@@ -12,6 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.nikasov.madlibs.R
+import com.nikasov.madlibs.ui.fragment.result.ResultFragmentDirections
 import com.nikasov.madlibs.ui.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_slide.*
@@ -28,6 +31,8 @@ class SlideFragment : Fragment(R.layout.fragment_slide) {
     private lateinit var enterAnim : Animation
     private lateinit var exitAnim : Animation
 
+    private lateinit var callback: OnBackPressedCallback
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -42,8 +47,13 @@ class SlideFragment : Fragment(R.layout.fragment_slide) {
         enterAnim = AnimationUtils.loadAnimation(requireContext(), R.anim.btn_anim_enter)
         exitAnim = AnimationUtils.loadAnimation(requireContext(), R.anim.btn_anim_enter)
 
+        //todo: add dialog about back
+        callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+            navigateHome()
+        }
+
         editText.doAfterTextChanged {
-            if (it.toString().isNotEmpty()) {
+            if (it.toString().isNotEmpty        ()) {
                 showBtn()
             } else {
                 hideBtn()
@@ -86,4 +96,8 @@ class SlideFragment : Fragment(R.layout.fragment_slide) {
         findNavController().navigate(action)
     }
 
+    private fun navigateHome() {
+        val action = SlideFragmentDirections.actionSlideFragmentToHomeFragment()
+        findNavController().navigate(action)
+    }
 }
