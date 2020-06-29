@@ -36,7 +36,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         }
     }
 
-
     private fun showBottomNav() {
         bottom_navigation_view.visibility = View.VISIBLE
     }

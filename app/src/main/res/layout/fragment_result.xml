@@ -1,9 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+
+<androidx.core.widget.NestedScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.result.ResultFragment">
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.result.ResultFragment">
+
+        <com.nikasov.madlibs.views.AppTextView
+            android:id="@+id/titleFirstStory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/big_margin"
+            android:gravity="center"
+            android:text="@string/first_story_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.nikasov.madlibs.views.AppTextView
+            android:id="@+id/firstStoryText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/big_padding"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleFirstStory" />
+
+        <com.nikasov.madlibs.views.AppTextView
+            android:id="@+id/titleSecondStory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/big_margin"
+            android:gravity="center"
+            android:text="@string/second_story_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_title"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/firstStoryText" />
+
+        <com.nikasov.madlibs.views.AppTextView
+            android:id="@+id/secondStoryText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/big_padding"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleSecondStory" />
+
+        <LinearLayout
+            android:gravity="center"
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:layout_margin="@dimen/big_margin"
+                android:padding="@dimen/basic_padding"
+                android:tint="@color/white"
+                android:src="@drawable/ic_save"
+                android:background="@drawable/btn_bg"
+                android:id="@+id/saveBtn"
+                android:layout_width="70dp"
+                android:layout_height="70dp" />
+            <ImageView
+                android:padding="@dimen/basic_padding"
+                android:layout_margin="@dimen/big_margin"
+                android:tint="@color/white"
+                android:src="@drawable/ic_home"
+                android:background="@drawable/btn_bg"
+                android:id="@+id/homeBtn"
+                android:layout_width="70dp"
+                android:layout_height="70dp" />
+
+        </LinearLayout>
 
 
-</FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

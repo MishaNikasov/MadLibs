@@ -14,6 +14,7 @@
             android:id="@+id/action_homeFragment_to_slideFragment"
             app:destination="@id/slideFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/slideFragment"
         android:name="com.nikasov.madlibs.ui.fragment.slide.SlideFragment"
@@ -26,11 +27,7 @@
             android:id="@+id/action_slideFragment_to_resultFragment"
             app:destination="@id/resultFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/historyFragment"
-        android:name="com.nikasov.madlibs.ui.fragment.history.HistoryFragment"
-        android:label="fragment_history"
-        tools:layout="@layout/fragment_history" />
+
     <fragment
         android:id="@+id/resultFragment"
         android:name="com.nikasov.madlibs.ui.fragment.result.ResultFragment"
@@ -39,5 +36,29 @@
         <action
             android:id="@+id/action_resultFragment_to_historyFragment"
             app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="type_of_game"
+            app:argType="integer" />
+        <argument
+            android:defaultValue="false"
+            android:name="type_of_story"
+            app:argType="boolean" />
+        <argument
+            android:defaultValue="-1"
+            android:name="history_id"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.nikasov.madlibs.ui.fragment.history.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_historyFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
     </fragment>
 </navigation>

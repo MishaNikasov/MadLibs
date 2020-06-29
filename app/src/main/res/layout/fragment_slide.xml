@@ -1,14 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.slide.SlideFragment">
 
+
     <com.nikasov.madlibs.views.AppTextView
+        android:id="@+id/titleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Slide"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        app:textType="bold" />
 
-</FrameLayout>
+    <com.nikasov.madlibs.views.AppTextView
+        android:layout_marginTop="@dimen/biggest_margin"
+        android:id="@+id/exampleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Slide"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_average"
+        app:layout_constraintTop_toBottomOf="@+id/titleTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="@dimen/biggest_margin"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/answer_bg"
+        android:gravity="center"
+        android:hint="@string/your_answer"
+        android:inputType="text"
+        android:padding="@dimen/big_padding"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray"
+        android:textSize="@dimen/text_average"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exampleTxt"/>
+
+    <TextView
+        android:enabled="false"
+        android:id="@+id/nextBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/biggest_margin"
+        android:layout_marginStart="@dimen/biggest_margin"
+        android:layout_marginEnd="@dimen/biggest_margin"
+        android:background="@drawable/btn_bg"
+        android:gravity="center"
+        android:padding="@dimen/big_padding"
+        android:textColor="@color/white"
+        android:text="Принять"
+        android:textSize="@dimen/text_average"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

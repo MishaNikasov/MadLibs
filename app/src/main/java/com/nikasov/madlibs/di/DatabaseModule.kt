@@ -3,7 +3,7 @@ package com.nikasov.madlibs.di
 import android.content.Context
 import androidx.room.Room
 import com.nikasov.madlibs.common.Constants
-import com.nikasov.madlibs.data.room.HistoryDatabase
+import com.nikasov.madlibs.data.room.Database
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,7 +21,7 @@ class DatabaseModule {
         @ApplicationContext app : Context
     ) = Room.databaseBuilder(
         app,
-        HistoryDatabase::class.java,
+        Database::class.java,
         Constants.DATABASE_NAME
     )
         .fallbackToDestructiveMigration()
@@ -29,6 +29,10 @@ class DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideHistoryDAO (db : HistoryDatabase) = db.getHistoryDAO()
+    fun provideHistoryDAO (db : Database) = db.getHistoryDAO()
+
+    @Provides
+    @Singleton
+    fun provideSlideDAO (db : Database) = db.getSlideDAO()
 
 }

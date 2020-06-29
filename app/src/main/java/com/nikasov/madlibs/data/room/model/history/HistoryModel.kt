@@ -6,7 +6,8 @@ import com.nikasov.madlibs.common.Constants
 
 @Entity(tableName = Constants.HISTORY_TABLE_NAME)
 data class HistoryModel (
-    var text : String,
+    var firstStoryText : String,
+    var secondStoryText : String,
     var date : Long
 ) {
     @PrimaryKey(autoGenerate = true)
