@@ -22,4 +22,10 @@ class HistoryViewModel @ViewModelInject constructor(
         }
     }
 
+    fun addToHistory(historyModel: HistoryModel) {
+        viewModelScope.launch {
+            databaseRepository.insertHistory(historyModel)
+        }
+    }
+
 }

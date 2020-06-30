@@ -2,7 +2,6 @@ package com.nikasov.madlibs.ui.fragment.slide
 
 import android.os.Bundle
 import android.view.View
-import android.view.animation.Animation
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
 import androidx.core.widget.doAfterTextChanged
@@ -14,7 +13,7 @@ import androidx.navigation.fragment.navArgs
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.customview.customView
 import com.nikasov.madlibs.R
-import com.nikasov.madlibs.ui.utils.Resource
+import com.nikasov.madlibs.common.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.dialog_back.*
 import kotlinx.android.synthetic.main.fragment_slide.*

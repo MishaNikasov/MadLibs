@@ -1,8 +1,7 @@
 package com.nikasov.madlibs.di
 
 import android.content.Context
-import com.nikasov.madlibs.data.room.Database
-import com.nikasov.madlibs.ui.utils.ResourceProvider
+import com.nikasov.madlibs.common.ResourceProvider
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,5 +15,6 @@ class ViewModule {
 
     @Provides
     @Singleton
-    fun provideResourceProvider (@ApplicationContext context: Context) = ResourceProvider(context)
+    fun provideResourceProvider (@ApplicationContext context: Context) =
+        ResourceProvider(context)
 }

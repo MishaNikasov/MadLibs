@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,27 +17,29 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.nikasov.madlibs.views.AppButton
-            android:id="@+id/singlePlayerBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/biggest_margin"
+            android:layout_marginStart="@dimen/biggest_margin"
+            android:layout_marginEnd="@dimen/biggest_margin"
+            android:id="@+id/singlePlayerBtn"
             android:text="@string/single_player"
-            app:layout_constrainedWidth="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.4" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.nikasov.madlibs.views.AppButton
             android:id="@+id/twoPlayersBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/big_margin"
             android:text="@string/two_players"
+            android:layout_marginTop="@dimen/biggest_margin"
+            android:layout_marginStart="@dimen/biggest_margin"
+            android:layout_marginEnd="@dimen/biggest_margin"
             app:layout_constrainedWidth="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/singlePlayerBtn"
-            app:layout_constraintWidth_percent="0.4" />
+            app:layout_constraintTop_toBottomOf="@+id/singlePlayerBtn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

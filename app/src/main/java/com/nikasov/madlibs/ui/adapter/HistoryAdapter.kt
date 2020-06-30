@@ -19,11 +19,11 @@ class HistoryAdapter(private val interaction: Interaction? = null) :
     private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<HistoryModel>() {
 
         override fun areItemsTheSame(oldItem: HistoryModel, newItem: HistoryModel): Boolean {
-            return oldItem.date == newItem.date
+            return oldItem == newItem
         }
 
         override fun areContentsTheSame(oldItem: HistoryModel, newItem: HistoryModel): Boolean {
-            return oldItem == newItem
+            return oldItem.id == newItem.id
         }
 
     }
@@ -57,6 +57,10 @@ class HistoryAdapter(private val interaction: Interaction? = null) :
         differ.submitList(list)
     }
 
+    fun deleteItem(position : Int) {
+        interaction?.onItemSwiped(differ.currentList[position])
+    }
+
     class HistoryViewHolder
     constructor(
         itemView: View,
@@ -73,13 +77,19 @@ class HistoryAdapter(private val interaction: Interaction? = null) :
                 interaction?.onItemSelected(adapterPosition, item)
             }
 
-            itemView.date.text = item.date
+            itemView.date.text = getTime(item.date)
             itemView.text.text = item.firstStoryText
+        }
+
+        private fun getTime(date : Date) : String {
+            val formatter = SimpleDateFormat.getDateTimeInstance()
+            return formatter.format(date)
         }
     }
 
     interface Interaction {
         fun onItemSelected(position: Int, item: HistoryModel)
+        fun onItemSwiped(item: HistoryModel)
     }
 }
 

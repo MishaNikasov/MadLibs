@@ -1,4 +1,4 @@
-package com.nikasov.madlibs.ui.utils
+package com.nikasov.madlibs.common
 
 
 sealed class Resource<T> (

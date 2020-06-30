@@ -15,7 +15,7 @@ interface HistoryDAO {
     suspend fun deleteHistory(history : HistoryModel)
     @Query("SELECT * FROM HISTORY_TABLE WHERE id = :id")
     suspend fun getHistoryById(id : Int) : HistoryModel
-    @Query("SELECT * FROM HISTORY_TABLE")
+    @Query("SELECT * FROM HISTORY_TABLE ORDER BY date")
     fun getAllHistory() : LiveData<List<HistoryModel>>
     @Query("DELETE FROM HISTORY_TABLE")
     fun deleteAllHistory()

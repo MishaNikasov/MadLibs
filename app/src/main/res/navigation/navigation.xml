@@ -13,7 +13,8 @@
         <action
             android:id="@+id/action_homeFragment_to_slideFragment"
             app:destination="@id/slideFragment"
-            app:enterAnim="@anim/slide_in_up" />
+            app:enterAnim="@anim/slide_in_up"
+            app:exitAnim="@anim/slide_out_down" />
     </fragment>
 
     <fragment
@@ -41,11 +42,11 @@
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" >
         <action
+            android:id="@+id/action_resultFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
             app:launchSingleTop="true"
             app:popUpTo="@+id/homeFragment"
-            app:popUpToInclusive="true"
-            android:id="@+id/action_resultFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:popUpToInclusive="true" />
         <argument
             android:name="type_of_game"
             app:argType="integer" />

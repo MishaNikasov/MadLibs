@@ -16,6 +16,9 @@
     <string name="home_btn">Домой</string>
     <string name="retry">Повторить</string>
     <string name="share">Поделиться</string>
+    <string name="accept">Принять</string>
+    <string name="delete">История удалена</string>
+    <string name="cancel">Отмена</string>
 
     <string-array name="standard_questions">
         <item>Кто?</item>
@@ -49,8 +52,8 @@
         <item>играли в прятки</item>
         <item>черная кошка</item>
         <item>я тут лягу</item>
-        <item>помню, было дело</item>
-        <item>и они пошли в кино</item>
+        <item>завари нам чаю</item>
+        <item>они пошли в кино</item>
     </string-array>
 
 </resources>

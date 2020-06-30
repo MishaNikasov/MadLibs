@@ -8,8 +8,7 @@ import com.nikasov.madlibs.R
 import com.nikasov.madlibs.common.Constants
 import com.nikasov.madlibs.data.room.model.history.HistoryModel
 import com.nikasov.madlibs.data.room.repoository.DatabaseRepository
-import com.nikasov.madlibs.ui.utils.ResourceProvider
-import kotlinx.android.synthetic.main.item_history.view.*
+import com.nikasov.madlibs.common.ResourceProvider
 import kotlinx.coroutines.launch
 import java.lang.StringBuilder
 import java.text.SimpleDateFormat
@@ -37,10 +36,10 @@ class ResultViewModel @ViewModelInject constructor(
                     list[1].text, " ",
                     standardAnswer[2], " ",
                     list[3].text, " ",
-                    standardAnswer[4], " пришел ",
+                    standardAnswer[4], ", тут пришел ",
                     list[5].text, " и сказал - ",
                     standardAnswer[6], ", ему ответили - ",
-                    list[7].text, " ",
+                    list[7].text, ", и все закончилось, ",
                     standardAnswer[8]
                 )
 
@@ -49,10 +48,10 @@ class ResultViewModel @ViewModelInject constructor(
                     standardAnswer[1], " ",
                     list[2].text, " ",
                     standardAnswer[3], " ",
-                    list[4].text, " пришел ",
+                    list[4].text, ", тут пришел ",
                     standardAnswer[5], " и сказал - ",
-                    list[6].text, ", ему ответили - ",
-                    standardAnswer[7], " ",
+                    list[6].text, ", мы ему ответили - ",
+                    standardAnswer[7], ", и все закончилось, ",
                     list[8].text
                 )
 
@@ -74,7 +73,7 @@ class ResultViewModel @ViewModelInject constructor(
 
     fun addToHistoryList(firstStoryTxt : String, secondStoryTxt : String) {
         viewModelScope.launch {
-            databaseRepository.insertHistory(HistoryModel(firstStoryTxt, secondStoryTxt, getTime()))
+            databaseRepository.insertHistory(HistoryModel(firstStoryTxt, secondStoryTxt, Calendar.getInstance().time))
         }
     }
 
@@ -82,12 +81,5 @@ class ResultViewModel @ViewModelInject constructor(
         viewModelScope.launch {
             databaseRepository.delAllSlides()
         }
-    }
-
-
-    private fun getTime() : String {
-//        ("yyyy.MM.dd")
-        val formatter = SimpleDateFormat.getDateTimeInstance()
-        return formatter.format(Calendar.getInstance().time)
     }
 }

@@ -8,8 +8,8 @@ import com.nikasov.madlibs.R
 import com.nikasov.madlibs.common.Constants
 import com.nikasov.madlibs.data.room.model.slide.SlideModel
 import com.nikasov.madlibs.data.room.repoository.DatabaseRepository
-import com.nikasov.madlibs.ui.utils.Resource
-import com.nikasov.madlibs.ui.utils.ResourceProvider
+import com.nikasov.madlibs.common.Resource
+import com.nikasov.madlibs.common.ResourceProvider
 import kotlinx.coroutines.launch
 
 class SlideViewModel @ViewModelInject constructor(
