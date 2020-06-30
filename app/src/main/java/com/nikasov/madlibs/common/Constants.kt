@@ -2,7 +2,7 @@ package com.nikasov.madlibs.common
 
 object Constants {
     // database
-    const val DATABASE_VERSION = 5
+    const val DATABASE_VERSION = 6
     const val DATABASE_NAME = "history_db"
     const val HISTORY_TABLE_NAME = "history_table"
     const val SLIDE_TABLE_NAME = "slide_table"

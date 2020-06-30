@@ -91,8 +91,8 @@ class SlideFragment : Fragment(R.layout.fragment_slide) {
             .customView(R.layout.dialog_back)
 
         backDialog.yes.setOnClickListener {
-            backDialog.dismiss()
             navigateHome()
+            backDialog.dismiss()
         }
         backDialog.no.setOnClickListener {
             backDialog.dismiss()

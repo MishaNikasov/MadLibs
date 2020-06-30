@@ -43,6 +43,7 @@ class ResultFragment : Fragment(R.layout.fragment_result) {
             callback.isEnabled = false
         } else {
             resultViewModel.setStories(args.typeOfGame)
+                //todo: save snackbar
             saveBtn.setOnClickListener {
                 resultViewModel.addToHistoryList(
                     firstStoryText.text.toString(),

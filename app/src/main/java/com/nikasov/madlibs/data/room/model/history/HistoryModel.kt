@@ -8,7 +8,7 @@ import com.nikasov.madlibs.common.Constants
 data class HistoryModel (
     var firstStoryText : String,
     var secondStoryText : String,
-    var date : Long
+    var date : String
 ) {
     @PrimaryKey(autoGenerate = true)
     var id : Int? = null

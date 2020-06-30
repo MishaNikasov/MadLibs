@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:orientation="vertical"
-    android:background="@drawable/answer_bg"
+    android:background="@drawable/btn_bg"
     android:layout_marginTop="@dimen/basic_margin"
     android:layout_marginStart="@dimen/basic_margin"
     android:layout_marginEnd="@dimen/basic_margin"
@@ -12,7 +12,7 @@
 
     <com.nikasov.madlibs.views.AppTextView
         android:id="@+id/date"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:layout_marginBottom="@dimen/basic_margin"
         android:text="date"
         app:textType="bold"
@@ -21,6 +21,7 @@
         android:layout_height="wrap_content"/>
 
     <com.nikasov.madlibs.views.AppTextView
+        android:textColor="@color/white"
         android:id="@+id/text"
         android:textSize="@dimen/text_normal"
         android:maxLines="2"

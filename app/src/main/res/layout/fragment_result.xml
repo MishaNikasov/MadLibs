@@ -20,6 +20,7 @@
             android:layout_margin="@dimen/big_margin"
             android:gravity="center"
             android:text="@string/first_story_title"
+            app:textType="bold"
             android:textColor="@color/black"
             android:textSize="@dimen/text_title"
             app:layout_constraintEnd_toEndOf="parent"
@@ -27,12 +28,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.nikasov.madlibs.views.AppTextView
+            android:gravity="top"
             android:id="@+id/firstStoryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/big_padding"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_normal"
+            android:textSize="@dimen/text_big"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/titleFirstStory" />
@@ -40,6 +42,7 @@
         <com.nikasov.madlibs.views.AppTextView
             android:id="@+id/titleSecondStory"
             android:layout_width="match_parent"
+            app:textType="bold"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/big_margin"
             android:gravity="center"
@@ -54,53 +57,61 @@
         <com.nikasov.madlibs.views.AppTextView
             android:id="@+id/secondStoryText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:layout_height="0dp"
             android:padding="@dimen/big_padding"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_normal"
+            android:textSize="@dimen/text_big"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/titleSecondStory" />
 
         <LinearLayout
-            android:gravity="center"
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <com.nikasov.madlibs.views.AppImageButton
-                android:layout_margin="@dimen/big_margin"
-                android:padding="@dimen/average_padding"
-                android:src="@drawable/ic_save"
                 android:id="@+id/saveBtn"
                 android:layout_width="60dp"
-                android:layout_height="60dp" />
+                android:layout_height="60dp"
+                android:layout_margin="@dimen/big_margin"
+                android:contentDescription="@string/save"
+                android:padding="@dimen/average_padding"
+                android:src="@drawable/ic_save" />
 
             <com.nikasov.madlibs.views.AppImageButton
-                android:padding="@dimen/average_padding"
-                android:layout_margin="@dimen/big_margin"
-                android:src="@drawable/ic_home"
                 android:id="@+id/homeBtn"
                 android:layout_width="60dp"
-                android:layout_height="60dp" />
+                android:layout_height="60dp"
+                android:layout_margin="@dimen/big_margin"
+                android:contentDescription="@string/home_btn"
+                android:padding="@dimen/average_padding"
+                android:src="@drawable/ic_home" />
 
             <com.nikasov.madlibs.views.AppImageButton
-                android:padding="@dimen/average_padding"
-                android:layout_margin="@dimen/big_margin"
-                android:src="@drawable/ic_replay"
                 android:id="@+id/retryBtn"
                 android:layout_width="60dp"
-                android:layout_height="60dp" />
+                android:layout_height="60dp"
+                android:layout_margin="@dimen/big_margin"
+                android:contentDescription="@string/retry"
+                android:padding="@dimen/average_padding"
+                android:src="@drawable/ic_replay" />
 
             <com.nikasov.madlibs.views.AppImageButton
-                android:padding="@dimen/average_padding"
-                android:layout_margin="@dimen/big_margin"
-                android:src="@drawable/ic_share"
                 android:id="@+id/shareBtn"
                 android:layout_width="60dp"
-                android:layout_height="60dp" />
+                android:layout_height="60dp"
+                android:layout_margin="@dimen/big_margin"
+                android:contentDescription="@string/share"
+                android:padding="@dimen/average_padding"
+                android:src="@drawable/ic_share" />
 
         </LinearLayout>
 

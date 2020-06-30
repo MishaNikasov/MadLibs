@@ -5,13 +5,17 @@
     <string name="two_players">Два игрока</string>
     <string name="home">Игра</string>
     <string name="history">История</string>
-    <string name="first_story_title">Ваша история №1:</string>
-    <string name="second_story_title">Ваша история №2:</string>
+    <string name="first_story_title">История №1:</string>
+    <string name="second_story_title">История №2:</string>
     <string name="your_answer">Введите ответ</string>
     <string name="go_back">Вернуться назад?</string>
     <string name="drop_progress">Прогресс будет утерян</string>
     <string name="yes">Да</string>
     <string name="no">Нет</string>
+    <string name="save">Сохранение</string>
+    <string name="home_btn">Домой</string>
+    <string name="retry">Повторить</string>
+    <string name="share">Поделиться</string>
 
     <string-array name="standard_questions">
         <item>Кто?</item>
@@ -27,14 +31,14 @@
 
     <string-array name="standard_questions_description">
         <item>Введите имя знакомого человека</item>
-        <item>Например "с Золушкой"</item>
-        <item>Например "в 3 часа ночи"</item>
-        <item>Например "на луне"</item>
-        <item>Например "ехали в трамвае"</item>
-        <item>Например "баба яга"</item>
-        <item>Например "где мой принц"</item>
-        <item>Например "приготовь нам чай"</item>
-        <item>Например "они пошли в столовую"</item>
+        <item>Например &quot;с Золушкой&quot;</item>
+        <item>Например &quot;в 3 часа ночи&quot;</item>
+        <item>Например &quot;на луне&quot;</item>
+        <item>Например &quot;ехали в трамвае&quot;</item>
+        <item>Например &quot;баба яга&quot;</item>
+        <item>Например &quot;где мой принц&quot;</item>
+        <item>Например &quot;приготовь нам чай&quot;</item>
+        <item>Например &quot;они пошли в столовую&quot;</item>
     </string-array>
 
     <string-array name="standard_answer">

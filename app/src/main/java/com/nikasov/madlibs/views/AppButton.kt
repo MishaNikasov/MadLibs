@@ -11,15 +11,12 @@ class AppButton @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyle: Int = 0
 ) : AppTextView(context, attrs, defStyle) {
-
     init {
         val padding = (context.resources.getDimension(R.dimen.big_padding)).toInt()
-
         setPadding(padding, padding, padding, padding)
         setTextColor(ContextCompat.getColor(context, R.color.white))
         background = ContextCompat.getDrawable(context, R.drawable.btn_bg)
         gravity = Gravity.CENTER
         isClickable = true
     }
-
 }

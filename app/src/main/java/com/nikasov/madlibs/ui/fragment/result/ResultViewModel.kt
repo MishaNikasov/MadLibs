@@ -9,8 +9,11 @@ import com.nikasov.madlibs.common.Constants
 import com.nikasov.madlibs.data.room.model.history.HistoryModel
 import com.nikasov.madlibs.data.room.repoository.DatabaseRepository
 import com.nikasov.madlibs.ui.utils.ResourceProvider
+import kotlinx.android.synthetic.main.item_history.view.*
 import kotlinx.coroutines.launch
 import java.lang.StringBuilder
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ResultViewModel @ViewModelInject constructor(
     private val resourceProvider: ResourceProvider,
@@ -71,7 +74,7 @@ class ResultViewModel @ViewModelInject constructor(
 
     fun addToHistoryList(firstStoryTxt : String, secondStoryTxt : String) {
         viewModelScope.launch {
-            databaseRepository.insertHistory(HistoryModel(firstStoryTxt, secondStoryTxt, 412L))
+            databaseRepository.insertHistory(HistoryModel(firstStoryTxt, secondStoryTxt, getTime()))
         }
     }
 
@@ -81,4 +84,10 @@ class ResultViewModel @ViewModelInject constructor(
         }
     }
 
+
+    private fun getTime() : String {
+//        ("yyyy.MM.dd")
+        val formatter = SimpleDateFormat.getDateTimeInstance()
+        return formatter.format(Calendar.getInstance().time)
+    }
 }

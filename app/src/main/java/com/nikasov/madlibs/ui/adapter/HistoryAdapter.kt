@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.DiffUtil
 import com.nikasov.madlibs.R
 import com.nikasov.madlibs.data.room.model.history.HistoryModel
 import kotlinx.android.synthetic.main.item_history.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class HistoryAdapter(private val interaction: Interaction? = null) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -71,8 +73,7 @@ class HistoryAdapter(private val interaction: Interaction? = null) :
                 interaction?.onItemSelected(adapterPosition, item)
             }
 
-            //todo: add date to item
-            itemView.date.text = item.date.toString()
+            itemView.date.text = item.date
             itemView.text.text = item.firstStoryText
         }
     }
