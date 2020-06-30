@@ -4,6 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import com.nikasov.madlibs.R
@@ -61,9 +62,15 @@ class HistoryAdapter(private val interaction: Interaction? = null) :
     ) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(item: HistoryModel) = with(itemView) {
+            itemView.animation = AnimationUtils.loadAnimation(
+                itemView.context,
+                R.anim.btn_anim_enter
+            )
+
             itemView.setOnClickListener {
                 interaction?.onItemSelected(adapterPosition, item)
             }
+
             //todo: add date to item
             itemView.date.text = item.date.toString()
             itemView.text.text = item.firstStoryText

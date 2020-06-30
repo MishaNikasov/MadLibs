@@ -70,35 +70,37 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent">
 
-            <ImageView
+            <com.nikasov.madlibs.views.AppImageButton
                 android:layout_margin="@dimen/big_margin"
                 android:padding="@dimen/average_padding"
-                android:tint="@color/white"
                 android:src="@drawable/ic_save"
-                android:background="@drawable/btn_bg"
                 android:id="@+id/saveBtn"
-                android:layout_width="70dp"
-                android:layout_height="70dp" />
+                android:layout_width="60dp"
+                android:layout_height="60dp" />
 
-            <ImageView
+            <com.nikasov.madlibs.views.AppImageButton
                 android:padding="@dimen/average_padding"
                 android:layout_margin="@dimen/big_margin"
-                android:tint="@color/white"
                 android:src="@drawable/ic_home"
-                android:background="@drawable/btn_bg"
                 android:id="@+id/homeBtn"
-                android:layout_width="70dp"
-                android:layout_height="70dp" />
+                android:layout_width="60dp"
+                android:layout_height="60dp" />
 
-            <ImageView
+            <com.nikasov.madlibs.views.AppImageButton
                 android:padding="@dimen/average_padding"
                 android:layout_margin="@dimen/big_margin"
-                android:tint="@color/white"
                 android:src="@drawable/ic_replay"
-                android:background="@drawable/btn_bg"
                 android:id="@+id/retryBtn"
-                android:layout_width="70dp"
-                android:layout_height="70dp" />
+                android:layout_width="60dp"
+                android:layout_height="60dp" />
+
+            <com.nikasov.madlibs.views.AppImageButton
+                android:padding="@dimen/average_padding"
+                android:layout_margin="@dimen/big_margin"
+                android:src="@drawable/ic_share"
+                android:id="@+id/shareBtn"
+                android:layout_width="60dp"
+                android:layout_height="60dp" />
 
         </LinearLayout>
 

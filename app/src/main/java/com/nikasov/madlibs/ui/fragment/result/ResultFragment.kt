@@ -1,18 +1,20 @@
 package com.nikasov.madlibs.ui.fragment.result
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.nikasov.madlibs.R
-import com.nikasov.madlibs.ui.fragment.slide.SlideFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_result.*
+import java.lang.StringBuilder
 
 @AndroidEntryPoint
 class ResultFragment : Fragment(R.layout.fragment_result) {
@@ -62,6 +64,25 @@ class ResultFragment : Fragment(R.layout.fragment_result) {
         homeBtn.setOnClickListener {
             navigateHome()
         }
+        shareBtn.setOnClickListener {
+            share()
+        }
+    }
+
+    private fun share() {
+            val s = StringBuilder().append(
+                resources.getString(R.string.first_story_title), "\n",
+                firstStoryText.text, "\n\n",
+                resources.getString(R.string.second_story_title), "\n",
+                secondStoryText.text
+            )
+            val sendIntent = Intent().apply {
+                action = Intent.ACTION_SEND
+                type="text/plain"
+                putExtra(Intent.EXTRA_TEXT, s.toString())
+            }
+            val shareIntent = Intent.createChooser(sendIntent, "Поделится историей...")
+            startActivity(shareIntent)
     }
 
     private fun navigateHome() {

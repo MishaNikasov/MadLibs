@@ -34,9 +34,9 @@ class ResultViewModel @ViewModelInject constructor(
                     list[1].text, " ",
                     standardAnswer[2], " ",
                     list[3].text, " ",
-                    standardAnswer[4], " ",
-                    list[5].text, " ",
-                    standardAnswer[6], " ",
+                    standardAnswer[4], " пришел ",
+                    list[5].text, " и сказал - ",
+                    standardAnswer[6], ", ему ответили - ",
                     list[7].text, " ",
                     standardAnswer[8]
                 )
@@ -46,9 +46,9 @@ class ResultViewModel @ViewModelInject constructor(
                     standardAnswer[1], " ",
                     list[2].text, " ",
                     standardAnswer[3], " ",
-                    list[4].text, " ",
-                    standardAnswer[5], " ",
-                    list[6].text, " ",
+                    list[4].text, " пришел ",
+                    standardAnswer[5], " и сказал - ",
+                    list[6].text, ", ему ответили - ",
                     standardAnswer[7], " ",
                     list[8].text
                 )

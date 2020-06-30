@@ -12,7 +12,8 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_slideFragment"
-            app:destination="@id/slideFragment" />
+            app:destination="@id/slideFragment"
+            app:enterAnim="@anim/slide_in_up" />
     </fragment>
 
     <fragment
@@ -27,11 +28,11 @@
             android:id="@+id/action_slideFragment_to_resultFragment"
             app:destination="@id/resultFragment" />
         <action
+            android:id="@+id/action_slideFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
             app:launchSingleTop="true"
             app:popUpTo="@+id/homeFragment"
-            app:popUpToInclusive="true"
-            android:id="@+id/action_slideFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
