@@ -7,44 +7,36 @@
     tools:context=".ui.fragment.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.nikasov.madlibs.views.AppTextView
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:padding="@dimen/big_padding"
-            android:background="@drawable/btn_bg"
-            android:id="@+id/single_player_btn"
-            app:layout_constrainedWidth="true"
-            app:layout_constraintWidth_percent="0.4"
-            android:layout_height="wrap_content"
+        <com.nikasov.madlibs.views.AppButton
+            android:id="@+id/singlePlayerBtn"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:text="@string/single_player"
+            app:layout_constrainedWidth="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.4" />
 
-        <com.nikasov.madlibs.views.AppTextView
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:padding="@dimen/big_padding"
-            android:background="@drawable/btn_bg"
-            android:layout_marginTop="@dimen/big_margin"
-            android:id="@+id/two_players_btn"
-            app:layout_constrainedWidth="true"
-            app:layout_constraintWidth_percent="0.4"
+        <com.nikasov.madlibs.views.AppButton
+            android:id="@+id/twoPlayersBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/big_margin"
             android:text="@string/two_players"
+            app:layout_constrainedWidth="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/single_player_btn" />
-
+            app:layout_constraintTop_toBottomOf="@+id/singlePlayerBtn"
+            app:layout_constraintWidth_percent="0.4" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

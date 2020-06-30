@@ -3,20 +3,20 @@ package com.nikasov.madlibs.ui.fragment.slide
 import android.os.Bundle
 import android.view.View
 import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
-import androidx.core.content.ContextCompat
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.customview.customView
 import com.nikasov.madlibs.R
-import com.nikasov.madlibs.ui.fragment.result.ResultFragmentDirections
 import com.nikasov.madlibs.ui.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.dialog_back.*
 import kotlinx.android.synthetic.main.fragment_slide.*
 
 
@@ -28,8 +28,9 @@ class SlideFragment : Fragment(R.layout.fragment_slide) {
     private val viewModel : SlideViewModel by viewModels()
     private val args : SlideFragmentArgs by navArgs()
 
-    private lateinit var enterAnim : Animation
-    private lateinit var exitAnim : Animation
+//    private lateinit var enterAnim : Animation
+//    private lateinit var exitAnim : Animation
+    private lateinit var backDialog : MaterialDialog
 
     private lateinit var callback: OnBackPressedCallback
 
@@ -44,16 +45,17 @@ class SlideFragment : Fragment(R.layout.fragment_slide) {
         viewModel.setListByType(args.typeOfGame)
         viewModel.setQuestion()
 
-        enterAnim = AnimationUtils.loadAnimation(requireContext(), R.anim.btn_anim_enter)
-        exitAnim = AnimationUtils.loadAnimation(requireContext(), R.anim.btn_anim_enter)
+        setUpBackDialog()
 
-        //todo: add dialog about back
+//        enterAnim = AnimationUtils.loadAnimation(requireContext(), R.anim.btn_anim_enter)
+//        exitAnim = AnimationUtils.loadAnimation(requireContext(), R.anim.btn_anim_enter)
+
         callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
-            navigateHome()
+            backDialog.show()
         }
 
         editText.doAfterTextChanged {
-            if (it.toString().isNotEmpty        ()) {
+            if (it.toString().isNotEmpty()) {
                 showBtn()
             } else {
                 hideBtn()
@@ -81,6 +83,20 @@ class SlideFragment : Fragment(R.layout.fragment_slide) {
         viewModel.currentDescription.observe(viewLifecycleOwner, Observer {description ->
             exampleTxt.text = description
         })
+    }
+
+    private fun setUpBackDialog() {
+        backDialog = MaterialDialog(requireContext())
+            .noAutoDismiss()
+            .customView(R.layout.dialog_back)
+
+        backDialog.yes.setOnClickListener {
+            backDialog.dismiss()
+            navigateHome()
+        }
+        backDialog.no.setOnClickListener {
+            backDialog.dismiss()
+        }
     }
 
     private fun hideBtn() {

@@ -18,12 +18,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun setUpUi() {
 
-        single_player_btn.setOnClickListener {
+        singlePlayerBtn.setOnClickListener {
             val action = HomeFragmentDirections.actionHomeFragmentToSlideFragment(Constants.TYPE_SINGLE_PLAYER)
             findNavController().navigate(action)
         }
 
-        two_players_btn.setOnClickListener {
+        twoPlayersBtn.setOnClickListener {
             val action = HomeFragmentDirections.actionHomeFragmentToSlideFragment(Constants.TYPE_TWO_PLAYERS)
             findNavController().navigate(action)
         }

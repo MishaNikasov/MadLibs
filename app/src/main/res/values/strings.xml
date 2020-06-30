@@ -8,6 +8,10 @@
     <string name="first_story_title">Ваша история №1:</string>
     <string name="second_story_title">Ваша история №2:</string>
     <string name="your_answer">Введите ответ</string>
+    <string name="go_back">Вернуться назад?</string>
+    <string name="drop_progress">Прогресс будет утерян</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
 
     <string-array name="standard_questions">
         <item>Кто?</item>
